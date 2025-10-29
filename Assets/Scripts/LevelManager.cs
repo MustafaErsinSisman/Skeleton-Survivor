@@ -32,24 +32,19 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Game started. Level 1. XP to Level 2: " + xpToNextLevel);
     }
 
+    // Dışarıdan (XP taşından) çağrılacak fonksiyon
     public void AddXP(int amount)
     {
         currentXP += amount;
-        Debug.Log("XP Added: +" + amount + " | Sum: " + currentXP + " / " + xpToNextLevel);
+        Debug.Log("XP alındı: +" + amount + " | Toplam: " + currentXP + " / " + xpToNextLevel);
 
         while (currentXP >= xpToNextLevel)
         {
             currentLevel++;
-
-            currentXP -= xpToNextLevel;
-
+            currentXP = currentXP - xpToNextLevel; 
             xpToNextLevel = (int)(xpToNextLevel * xpMultiplier);
-
-            Debug.LogWarning("LEVEL UP! New Level: " + currentLevel + " | XP to next level: " + xpToNextLevel);
-            
-            // AŞAMA 9'DA BURAYA GELECEĞİZ:
-            // Time.timeScale = 0f; // Oyunu durdur
-            // ShowLevelUpOptions(); // Yetenek seçim ekranını göster
+            Debug.LogWarning("LEVEL UP! Yeni Seviye: " + currentLevel + " | Bir sonraki seviye için gereken XP: " + xpToNextLevel);
+            Time.timeScale = 0f; 
         }
     }
 }

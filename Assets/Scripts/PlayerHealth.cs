@@ -13,7 +13,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(float damageAmount)
     {
         currentHealth -= damageAmount;
-
+	Debug.Log("Player health: " + currentHealth);
         if (currentHealth <= 0)
         {
             Die();
@@ -22,6 +22,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Die()
     {
+	Debug.Log("Player has died.");
         Time.timeScale = 0f;
 
         gameObject.SetActive(false);

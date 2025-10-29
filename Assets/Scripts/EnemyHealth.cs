@@ -25,9 +25,12 @@ public class EnemyHealth : MonoBehaviour
         if (gem != null)
         {
             Vector3 spawnPosition = transform.position;
-            spawnPosition.y = 0.1f; 
+
+            spawnPosition.y = 1.08f; 
+
             Instantiate(gem, spawnPosition, Quaternion.identity);
         }
+
         Destroy(gameObject);
     }
 }

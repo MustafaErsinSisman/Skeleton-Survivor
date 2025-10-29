@@ -1,23 +1,35 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class EnemyAI : MonoBehaviour
 {
-    private Transform target;
+    private Transform hedef;
     private NavMeshAgent agent;
+
+    [Header("Optimization Settings")]
+    [SerializeField] private float pathUpdateRate = 0.2f;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        target = GameObject.FindGameObjectWithTag("Player").transform;
-    }
-
-    void Update()
-    {
-        if (target != null)
+        hedef = GameObject.FindGameObjectWithTag("Player").transform;
+        agent.avoidancePriority = Random.Range(1, 100);
+        if (hedef != null)
         {
-            agent.SetDestination(target.position);
+            StartCoroutine(UpdatePathRoutine());
+        }
+    }
+    private IEnumerator UpdatePathRoutine()
+    {
+        while (true)
+        {
+            if (hedef != null && agent.isOnNavMesh)
+            {
+                agent.SetDestination(hedef.position);
+            }
+            yield return new WaitForSeconds(pathUpdateRate);
         }
     }
 }
