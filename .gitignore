@@ -1,0 +1,29 @@
+# =================================================================
+#  Unity (Standart)
+#
+#  Bu dosyalar Unity tarafından her bilgisayarda yeniden üretilir.
+#  Asla GitHub'a gönderilmemelidirler.
+# =================================================================
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+
+# =================================================================
+#  IDE ve Sistem Dosyaları
+#
+#  Bu dosyalar senin kişisel ayarlarını veya sistem dosyalarını tutar.
+#  Arkadaşının bunlara ihtiyacı yok (ve yollamak çatışma yaratır).
+# =================================================================
+.vscode/
+*.sln
+*.csproj
+*.user
+*.userprefs
+
+# Diğer sistem dosyaları
+.DS_Store
+Thumbs.db
