@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 3193522005857358883}
   - component: {fileID: 7908886516016428097}
   - component: {fileID: 3621514617328951620}
+  - component: {fileID: 7638139443779009502}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -261,6 +262,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 20
+--- !u!114 &7638139443779009502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6973865076105042972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e64cd32813c37f48aef662d5180a4ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  auraLevel: 0
+  swordLevel: 0
+  arrowLevel: 0
+  meteorLevel: 0
+  magnetLevel: 0
+  radiusLevel: 0
+  projectileCountLevel: 0
+  weaponSpeedLevel: 0
 --- !u!1 &8266610993948268624
 GameObject:
   m_ObjectHideFlags: 0
