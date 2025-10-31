@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour
 	[SerializeField] private int xpToNextLevel_Start = 10;
 	[SerializeField] private float xpMultiplier = 1.5f;
 
-	[Header("UI Referansları")]
+	[Header("UI References")]
 	[SerializeField] private LevelUpUI levelUpUI;
 
 	[Header("Current Stiuation")]

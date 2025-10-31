@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class LevelUpUI : MonoBehaviour
 {
@@ -6,34 +7,54 @@ public class LevelUpUI : MonoBehaviour
     [SerializeField] private UpgradeOptionDisplay optionDisplay2;
     [SerializeField] private UpgradeOptionDisplay optionDisplay3;
 
+    private List<UpgradeData> currentOptions;
     public void ShowOptions()
     {
         gameObject.SetActive(true);
         Time.timeScale = 0f;
 
-        // --- GELECEKTEKİ GÖREV ---
-        // 1. PlayerStats'tan 3 rastgele yetenek seç (örn: Aura, Magnet, Sword)
-        // 2. Kartları bu bilgilere göre ayarla
-        //    optionDisplay1.Setup("Aura", "Level 2", "Alan genişler", auraIcon);
-        //    optionDisplay2.Setup("Magnet", "Level 1", "Yeni yetenek!", magnetIcon);
-        //    optionDisplay3.Setup("Sword", "Level 4", "Hasar artar", swordIcon);
-        // (Şimdilik bu 'Setup' fonksiyonunu yazmadık, o yüzden kartlar boş görünecek)
+        currentOptions = UpgradeManager.Instance.GetRandomUpgrades(3);
 
-        optionDisplay1.SetButtonAction(() => { SelectOption(1); });
-        optionDisplay2.SetButtonAction(() => { SelectOption(2); });
-        optionDisplay3.SetButtonAction(() => { SelectOption(3); });
+        if (currentOptions.Count > 0)
+        {
+            optionDisplay1.gameObject.SetActive(true);
+            optionDisplay1.Setup(currentOptions[0]);
+            optionDisplay1.SetButtonAction(() => { SelectOption(0); });
+        }
+        else
+        {
+            optionDisplay1.gameObject.SetActive(false);
+        }
+
+        if (currentOptions.Count > 1)
+        {
+            optionDisplay2.gameObject.SetActive(true);
+            optionDisplay2.Setup(currentOptions[1]);
+            optionDisplay2.SetButtonAction(() => { SelectOption(1); });
+        }
+        else
+        {
+            optionDisplay2.gameObject.SetActive(false);
+        }
+
+        if (currentOptions.Count > 2)
+        {
+            optionDisplay3.gameObject.SetActive(true);
+            optionDisplay3.Setup(currentOptions[2]);
+            optionDisplay3.SetButtonAction(() => { SelectOption(2); });
+        }
+        else
+        {
+            optionDisplay3.gameObject.SetActive(false);
+        }
     }
-
-    private void SelectOption(int optionID)
+    private void SelectOption(int optionIndex)
     {
-        Time.timeScale = 1f;
+        UpgradeData chosenUpgrade = currentOptions[optionIndex];
+        PlayerStats.Instance.UpgradeLevel(chosenUpgrade.upgradeType);
         gameObject.SetActive(false);
-
-        // --- GELECEKTEKİ GÖREV ---
-        // if (optionID == 1) { PlayerStats.Instance.AuraSeviyesiniArtir(); }
-        // else if (optionID == 2) { PlayerStats.Instance.MagnetSeviyesiniArtir(); }
-        // ...
+        Time.timeScale = 1f;
         
-        Debug.Log($"Seçenek {optionID} seçildi ve oyun devam ediyor.");
+        Debug.Log($"Seçenek {chosenUpgrade.skillName} ({chosenUpgrade.upgradeType}) seçildi.");
     }
 }

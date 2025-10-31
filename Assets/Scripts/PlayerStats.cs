@@ -1,18 +1,12 @@
 using UnityEngine;
+using System.Collections.Generic;
+using System;
 
 public class PlayerStats : MonoBehaviour
 {
     public static PlayerStats Instance { get; private set; }
-
-    public int auraLevel = 0;
-    public int swordLevel = 0;
-    public int arrowLevel = 0;
-    public int meteorLevel = 0;
-
-    public int magnetLevel = 0;
-    public int radiusLevel = 0;
-    public int projectileCountLevel = 0;
-    public int weaponSpeedLevel = 0;
+    public const int MAX_LEVEL = 5;
+    public Dictionary<UpgradeType, int> upgradeLevels;
 
     private void Awake()
     {
@@ -23,6 +17,34 @@ public class PlayerStats : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+        InitializeLevels();
+    }
+
+    private void InitializeLevels()
+    {
+        upgradeLevels = new Dictionary<UpgradeType, int>();
+        foreach (UpgradeType type in Enum.GetValues(typeof(UpgradeType)))
+        {
+            upgradeLevels.Add(type, 0);
+        }
+    }
+
+    public int GetLevel(UpgradeType type)
+    {
+        if (upgradeLevels.ContainsKey(type))
+        {
+            return upgradeLevels[type];
+        }
+        return 0;
+    }
+
+    public void UpgradeLevel(UpgradeType type)
+    {
+        if (upgradeLevels.ContainsKey(type))
+        {
+            upgradeLevels[type]++;
+            Debug.Log($"UPGRADE: {type} seviyesi {upgradeLevels[type]}'a yükseldi.");
         }
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class UpgradeData : ScriptableObject
 {
 	[Header("Base Info")]
+	public UpgradeType upgradeType;
 	public string skillName;
 	public Sprite icon;
 

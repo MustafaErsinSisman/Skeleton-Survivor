@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb29e339df89fc94fa682e0e9663842e, type: 3}
-  m_Name: Aura_Data
+  m_Name: Meteor_Data
   m_EditorClassIdentifier: 
-  skillName: Aura
+  upgradeType: 2
+  skillName: Meteor
   icon: {fileID: 0}
   levels:
-  - levelDescription: Creates an area that damages enemies
-  - levelDescription: The damage increases
-  - levelDescription: The area expands
-  - levelDescription: The damage increases
-  - levelDescription: The area expands
+  - levelDescription: Meteor atar
+  - levelDescription: Hasar artar
+  - levelDescription: "Meteor say\u0131s\u0131 artar"
+  - levelDescription: Hasar artar
+  - levelDescription: "Meteor say\u0131s\u0131 artar"
