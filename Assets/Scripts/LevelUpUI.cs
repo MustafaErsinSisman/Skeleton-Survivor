@@ -51,7 +51,8 @@ public class LevelUpUI : MonoBehaviour
     private void SelectOption(int optionIndex)
     {
         UpgradeData chosenUpgrade = currentOptions[optionIndex];
-        PlayerStats.Instance.UpgradeLevel(chosenUpgrade.upgradeType);
+	PlayerStats.Instance.UpgradeLevel(chosenUpgrade.upgradeType);
+	WeaponController.Instance.ApplyUpgrade(chosenUpgrade.upgradeType);
         gameObject.SetActive(false);
         Time.timeScale = 1f;
         
