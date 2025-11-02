@@ -24,14 +24,10 @@ public class WeaponController : MonoBehaviour
 
 	public void ApplyUpgrade(UpgradeType upgradeType)
 	{
-		if (upgradeType == UpgradeType.Aura)
-		{
-			ApplyAuraUpgrade();
-		}
-		// else if (upgradeType == UpgradeType.Sword)
-		// {
-		//	 ApplySwordUpgrade();
-		// }
+		if (upgradeType == UpgradeType.Aura) { ApplyAuraUpgrade(); }
+		else if (upgradeType == UpgradeType.Sword) { ApplySwordUpgrade(); }
+		else if (upgradeType == UpgradeType.Arrow) { ApplyArrowUpgrade(); }
+		else if (upgradeType == UpgradeType.Meteor) { ApplyMeteorUpgrade(); }
 	}
 
 	private void ApplyAuraUpgrade()
@@ -57,5 +53,51 @@ public class WeaponController : MonoBehaviour
 			// gibi gerçek kodlar gelecek.
 		}
 		// (Diğer seviyeler (4 ve 5) için else if... blokları buraya eklenecek)
+	}
+
+	private void ApplySwordUpgrade()
+	{
+		int currentSwordLevel = PlayerStats.Instance.GetLevel(UpgradeType.Sword);
+
+		if (currentSwordLevel == 1) // Eğer seviye 1 ise (YENİ ALINDI)
+		{
+			swordWeaponObject.SetActive(true);
+		}
+		else
+		{
+			// (Seviye 2, 3, 4, 5 için 'else if' blokları buraya gelecek)
+			// Örn: Seviye 2'de 2. bir kılıç yaratır (açısı 180 derece farklı)
+			// veya hızı artar (GetComponent<SwordWeapon>().speed *= 1.2f)
+		}
+	}
+
+	private void ApplyArrowUpgrade()
+	{
+		int currentArrowLevel = PlayerStats.Instance.GetLevel(UpgradeType.Arrow);
+
+		if (currentArrowLevel == 1)
+		{
+			arrowWeaponObject.SetActive(true);
+		}
+		else
+		{
+			// Seviye 2'de: Ok sayısını artır (ProjectileCountLevel'a bağlanabilir)
+			// Seviye 3'de: Atış hızını artır (GetComponent<ArrowController>().fireRate *= 0.8f)
+		}
+	}
+	
+	private void ApplyMeteorUpgrade()
+	{
+		int currentMeteorLevel = PlayerStats.Instance.GetLevel(UpgradeType.Meteor);
+
+		if (currentMeteorLevel == 1)
+		{
+			meteorWeaponObject.SetActive(true);
+		}
+		else
+		{
+			// Seviye 2'de: Düşen meteor sayısı artar (birden fazla Instantiate)
+			// Seviye 3'de: Atış hızı artar (fireRate)
+		}
 	}
 }

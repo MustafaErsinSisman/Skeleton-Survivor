@@ -865,6 +865,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b52c4e29d278c854f8bd0d2127044c0e, type: 2}
   - {fileID: 11400000, guid: 0d401b6b02f0a3c46ad2d30d4d4c4f61, type: 2}
   - {fileID: 11400000, guid: f7c893723ea18e64bb4a1e392f29fbbf, type: 2}
+--- !u!1 &1205403280 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1989514624567935594, guid: 6ff208dace3619f439015f7ec3ffd35a, type: 3}
+  m_PrefabInstance: {fileID: 4135313898262300093}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1314603454 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4990175638819467973, guid: fb29f803906afe643af05d357c74ec65, type: 3}
@@ -1399,6 +1404,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1989514624567935594, guid: 6ff208dace3619f439015f7ec3ffd35a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5316697998684636352, guid: 6ff208dace3619f439015f7ec3ffd35a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1443,6 +1452,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8089953823383327435, guid: 6ff208dace3619f439015f7ec3ffd35a, type: 3}
+      propertyPath: swordWeaponObject
+      value: 
+      objectReference: {fileID: 1205403280}
     - target: {fileID: 8266610993948268624, guid: 6ff208dace3619f439015f7ec3ffd35a, type: 3}
       propertyPath: m_Name
       value: Aura
