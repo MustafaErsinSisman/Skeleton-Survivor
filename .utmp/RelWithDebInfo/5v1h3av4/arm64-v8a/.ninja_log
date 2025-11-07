@@ -1,0 +1,12 @@
+# ninja log v5
+182	1903	7842127533928497	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	7e91fead21c2e0c5
+161	2167	7842127535728199	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	409e687b9e10c3b6
+91	2175	7842127535816282	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	34d74b91cc81ade3
+17	2177	7842127536039534	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	b6b5d3b6f042edfa
+134	2179	7842127536156215	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	4e78c7d43eba5bf3
+36	2221	7842127536713455	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	b291368a7de0de5b
+1905	2263	7842127537664163	C:/UnityProjects/Skeleton-Survivor/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5v1h3av4/obj/arm64-v8a/libswappywrapper.so	1eabb2f5cfb49fa7
+56	2447	7842127539258902	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	afacf99572fc7986
+1	2553	7842127540331589	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	91ec21c22677649e
+111	2752	7842127542332049	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	320845b9b093b4fd
+2753	2916	7842127544184580	C:/UnityProjects/Skeleton-Survivor/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5v1h3av4/obj/arm64-v8a/libgame.so	d1303e67b9125b39
